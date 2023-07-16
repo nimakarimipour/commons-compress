@@ -614,8 +614,11 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.
                 <annotationProcessor>edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker</annotationProcessor>
               </annotationProcessors>
               <compilerArgs>
+                <arg>-Awarns</arg>
                 <arg>-AannotatedPackages=org.apache</arg>
                 <arg>-AenableCustomCheck</arg>
+                <arg>-AenableSerialization</arg>
+                <arg>-AserializationConfigPath=/tmp/ucr-tainting/apache-compress/taint.xml</arg>
                 <!-- <arg>-Awarns</arg> --> <!-- -Awarns turns type-checking errors into warnings. -->
               </compilerArgs>
             </configuration>

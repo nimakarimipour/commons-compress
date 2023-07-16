@@ -26,6 +26,7 @@ import java.util.jar.JarOutputStream;
 import org.apache.commons.compress.harmony.pack200.Pack200Adapter;
 import org.apache.commons.compress.harmony.pack200.Pack200Exception;
 import org.apache.commons.compress.java.util.jar.Pack200.Unpacker;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This class provides the binding between the standard Pack200 interface and the internal interface for (un)packing. As
@@ -40,7 +41,7 @@ public class Pack200UnpackerAdapter extends Pack200Adapter implements Unpacker {
      * java.util.jar.JarOutputStream)
      */
     @Override
-    public void unpack(final File file, final JarOutputStream out) throws IOException {
+    public void unpack(final @RUntainted File file, final JarOutputStream out) throws IOException {
         if (file == null || out == null) {
             throw new IllegalArgumentException("Must specify both input and output streams");
         }

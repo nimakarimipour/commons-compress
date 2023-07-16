@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * StreamBridge that caches all data written to the output side in
@@ -32,7 +33,7 @@ import java.nio.file.Path;
  * @since 1.3
  */
 class TempFileCachingStreamBridge extends StreamBridge {
-    private final Path f;
+    private final @RUntainted Path f;
 
     TempFileCachingStreamBridge() throws IOException {
         f = Files.createTempFile("commons-compress", "packtemp");

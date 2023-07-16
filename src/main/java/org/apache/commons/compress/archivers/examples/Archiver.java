@@ -42,6 +42,7 @@ import org.apache.commons.compress.archivers.ArchiveStreamFactory;
 import org.apache.commons.compress.archivers.sevenz.SevenZOutputFile;
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
 import org.apache.commons.compress.utils.IOUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Provides a high level API for creating archives.
@@ -162,7 +163,7 @@ public class Archiver {
         Files.walkFileTree(directory, new ArchiverFileVisitor(null, directory) {
 
             @Override
-            protected FileVisitResult visit(final Path path, final BasicFileAttributes attrs, final boolean isFile)
+            protected FileVisitResult visit(final @RUntainted Path path, final BasicFileAttributes attrs, final boolean isFile)
                 throws IOException {
                 Objects.requireNonNull(path);
                 Objects.requireNonNull(attrs);

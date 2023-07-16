@@ -40,6 +40,7 @@ import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.ArchiveOutputStream;
 import org.apache.commons.compress.utils.ByteUtils;
 import org.apache.commons.compress.utils.IOUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Reimplementation of {@link java.util.zip.ZipOutputStream
@@ -428,7 +429,7 @@ public class ZipArchiveOutputStream extends ArchiveOutputStream {
      * @throws IllegalArgumentException if zipSplitSize is not in the required range
      * @since 1.20
      */
-    public ZipArchiveOutputStream(final File file, final long zipSplitSize) throws IOException {
+    public ZipArchiveOutputStream(final @RUntainted File file, final long zipSplitSize) throws IOException {
         this(file.toPath(), zipSplitSize);
     }
 
@@ -460,7 +461,7 @@ public class ZipArchiveOutputStream extends ArchiveOutputStream {
      * @throws IllegalArgumentException if zipSplitSize is not in the required range
      * @since 1.22
      */
-    public ZipArchiveOutputStream(final Path path, final long zipSplitSize) throws IOException {
+    public ZipArchiveOutputStream(final @RUntainted Path path, final long zipSplitSize) throws IOException {
         def = new Deflater(level, true);
         this.outputStream = new ZipSplitOutputStream(path, zipSplitSize);
         streamCompressor = StreamCompressor.create(this.outputStream, def);

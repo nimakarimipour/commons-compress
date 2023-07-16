@@ -19,6 +19,7 @@
 package org.apache.commons.compress.archivers;
 
 import java.util.Date;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Represents an entry of an archive.
@@ -43,7 +44,7 @@ public interface ArchiveEntry {
      *
      * @return The name of this entry in the archive.
      */
-    String getName();
+    @RUntainted String getName();
 
     /**
      * Gets the uncompressed size of this entry. May be -1 (SIZE_UNKNOWN) if the size is unknown

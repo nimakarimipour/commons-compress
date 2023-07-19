@@ -33,6 +33,7 @@ import org.apache.commons.compress.archivers.ArchiveInputStream;
 import org.apache.commons.compress.archivers.zip.ZipEncoding;
 import org.apache.commons.compress.archivers.zip.ZipEncodingHelper;
 import org.apache.commons.compress.utils.IOUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The DumpArchiveInputStream reads a UNIX dump archive as an InputStream.
@@ -203,7 +204,7 @@ public class DumpArchiveInputStream extends ArchiveInputStream {
     @Override
     public DumpArchiveEntry getNextEntry() throws IOException {
         DumpArchiveEntry entry = null;
-        String path = null;
+        @RUntainted String path = null;
 
         // is there anything in the queue?
         if (!queue.isEmpty()) {
@@ -299,10 +300,10 @@ public class DumpArchiveInputStream extends ArchiveInputStream {
      * @param entry
      * @return  full path for specified archive entry, or null if there's a gap.
      */
-    private String getPath(final DumpArchiveEntry entry) {
+    private @RUntainted String getPath(final DumpArchiveEntry entry) {
         // build the stack of elements. It's possible that we're
         // still missing an intermediate value and if so we
-        final Stack<String> elements = new Stack<>();
+        final Stack<@RUntainted String> elements = new Stack<>();
         Dirent dirent = null;
 
         for (int i = entry.getIno();; i = dirent.getParentIno()) {
@@ -327,7 +328,7 @@ public class DumpArchiveInputStream extends ArchiveInputStream {
         }
 
         // generate full path from stack of elements.
-        final StringBuilder sb = new StringBuilder(elements.pop());
+        final @RUntainted StringBuilder sb = new StringBuilder(elements.pop());
 
         while (!elements.isEmpty()) {
             sb.append('/');
@@ -508,7 +509,7 @@ public class DumpArchiveInputStream extends ArchiveInputStream {
 
                 final byte type = blockBuffer[i + 6];
 
-                final String name = DumpArchiveUtil.decode(zipEncoding, blockBuffer, i + 8, blockBuffer[i + 7]);
+                final @RUntainted String name = DumpArchiveUtil.decode(zipEncoding, blockBuffer, i + 8, blockBuffer[i + 7]);
 
                 if (".".equals(name) || "..".equals(name)) {
                     // do nothing...
@@ -528,7 +529,7 @@ public class DumpArchiveInputStream extends ArchiveInputStream {
 
                 // check whether this allows us to fill anything in the pending list.
                 pending.forEach((k, v) -> {
-                    final String path = getPath(v);
+                    final @RUntainted String path = getPath(v);
 
                     if (path != null) {
                         v.setName(path);

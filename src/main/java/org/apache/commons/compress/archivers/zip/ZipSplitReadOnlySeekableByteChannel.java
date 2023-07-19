@@ -37,6 +37,7 @@ import java.util.stream.Stream;
 import org.apache.commons.compress.archivers.ArchiveStreamFactory;
 import org.apache.commons.compress.utils.FileNameUtils;
 import org.apache.commons.compress.utils.MultiReadOnlySeekableByteChannel;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * {@link MultiReadOnlySeekableByteChannel} that knows what a split ZIP archive should look like.
@@ -82,7 +83,7 @@ public class ZipSplitReadOnlySeekableByteChannel extends MultiReadOnlySeekableBy
      * @throws IOException if the first channel doesn't seem to hold
      * the beginning of a split archive
      */
-    public static SeekableByteChannel buildFromLastSplitSegment(final File lastSegmentFile) throws IOException {
+    public static SeekableByteChannel buildFromLastSplitSegment(final @RUntainted File lastSegmentFile) throws IOException {
         return buildFromLastSplitSegment(lastSegmentFile.toPath());
     }
 
@@ -95,7 +96,7 @@ public class ZipSplitReadOnlySeekableByteChannel extends MultiReadOnlySeekableBy
      * the beginning of a split archive
      * @since 1.22
      */
-    public static SeekableByteChannel buildFromLastSplitSegment(final Path lastSegmentPath) throws IOException {
+    public static SeekableByteChannel buildFromLastSplitSegment(final @RUntainted Path lastSegmentPath) throws IOException {
         final String extension = FileNameUtils.getExtension(lastSegmentPath);
         if (!extension.equalsIgnoreCase(ArchiveStreamFactory.ZIP)) {
             throw new IllegalArgumentException("The extension of last ZIP split segment should be .zip");

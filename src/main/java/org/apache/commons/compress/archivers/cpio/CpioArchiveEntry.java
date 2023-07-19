@@ -31,6 +31,7 @@ import java.util.Objects;
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.utils.ExactMath;
 import org.apache.commons.compress.utils.TimeUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * A cpio archive consists of a sequence of files. There are several types of
@@ -637,7 +638,7 @@ public class CpioArchiveEntry implements CpioConstants, ArchiveEntry {
      * @return Returns the name.
      */
     @Override
-    public String getName() {
+    public @RUntainted String getName() {
         return this.name;
     }
 

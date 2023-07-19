@@ -18,6 +18,7 @@ package org.apache.commons.compress.archivers.arj;
 
 import java.util.Arrays;
 import java.util.Objects;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 class LocalFileHeader {
     static class FileTypes {
@@ -67,7 +68,7 @@ class LocalFileHeader {
 
     int originalSizeEvenForVolumes;
 
-    String name;
+    @RUntainted String name;
 
     String comment;
 

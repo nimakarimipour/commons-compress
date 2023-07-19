@@ -21,6 +21,7 @@ import java.util.Date;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipUtil;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * An entry in an ARJ archive.
@@ -123,7 +124,7 @@ public class ArjArchiveEntry implements ArchiveEntry {
      * @return This entry's name.
      */
     @Override
-    public String getName() {
+    public @RUntainted String getName() {
         if ((localFileHeader.arjFlags & LocalFileHeader.Flags.PATHSYM) != 0) {
             return localFileHeader.name.replace("/",
                     File.separator);

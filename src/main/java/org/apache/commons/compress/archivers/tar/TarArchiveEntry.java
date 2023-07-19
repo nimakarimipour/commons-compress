@@ -49,6 +49,7 @@ import org.apache.commons.compress.archivers.zip.ZipEncoding;
 import org.apache.commons.compress.utils.ArchiveUtils;
 import org.apache.commons.compress.utils.IOUtils;
 import org.apache.commons.compress.utils.TimeUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This class represents an entry in a Tar archive. It consists
@@ -1017,7 +1018,7 @@ public class TarArchiveEntry implements ArchiveEntry, TarConstants, EntryStreamO
      * @return This entry's name.
      */
     @Override
-    public String getName() {
+    public @RUntainted String getName() {
         return name;
     }
 

@@ -23,6 +23,7 @@ import java.util.Arrays;
 
 import org.apache.commons.compress.archivers.zip.ZipEncoding;
 import org.apache.commons.compress.utils.ByteUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Various utilities for dump archives.
@@ -81,7 +82,7 @@ class DumpArchiveUtil {
     /**
      * Decodes a byte array to a string.
      */
-    static String decode(final ZipEncoding encoding, final byte[] b, final int offset, final int len)
+    static @RUntainted String decode(final ZipEncoding encoding, final byte[] b, final int offset, final int len)
         throws IOException {
         return encoding.decode(Arrays.copyOfRange(b, offset, offset + len));
     }

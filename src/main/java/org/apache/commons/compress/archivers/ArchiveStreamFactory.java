@@ -46,6 +46,7 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
 import org.apache.commons.compress.utils.IOUtils;
 import org.apache.commons.compress.utils.Sets;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Factory to create Archive[In|Out]putStreams from names or the first bytes of
@@ -367,7 +368,7 @@ public class ArchiveStreamFactory implements ArchiveStreamProvider {
     /**
      * Entry encoding, null for the default.
      */
-    private volatile String entryEncoding;
+    private volatile @RUntainted String entryEncoding;
 
     private SortedMap<String, ArchiveStreamProvider> archiveInputStreamProviders;
 
@@ -387,7 +388,7 @@ public class ArchiveStreamFactory implements ArchiveStreamProvider {
      *
      * @since 1.10
      */
-    public ArchiveStreamFactory(final String encoding) {
+    public ArchiveStreamFactory(final @RUntainted String encoding) {
         this.encoding = encoding;
         // Also set the original field so can continue to use it.
         this.entryEncoding = encoding;
@@ -428,7 +429,7 @@ public class ArchiveStreamFactory implements ArchiveStreamProvider {
 
     @Override
     public ArchiveInputStream createArchiveInputStream(final String archiverName, final InputStream in,
-            final String actualEncoding) throws ArchiveException {
+            final @RUntainted String actualEncoding) throws ArchiveException {
 
         if (archiverName == null) {
             throw new IllegalArgumentException("Archivername must not be null.");
@@ -604,7 +605,7 @@ public class ArchiveStreamFactory implements ArchiveStreamProvider {
      * was used to specify the factory encoding.
      */
     @Deprecated
-    public void setEntryEncoding(final String entryEncoding) {
+    public void setEntryEncoding(final @RUntainted String entryEncoding) {
         // Note: this does not detect new ArchiveStreamFactory(null) but that does not set the encoding anyway
         if (encoding != null) {
             throw new IllegalStateException("Cannot overide encoding set by the constructor");

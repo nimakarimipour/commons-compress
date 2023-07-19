@@ -23,6 +23,7 @@ import java.util.Date;
 import java.util.Objects;
 
 import org.apache.commons.compress.archivers.zip.ZipEncoding;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This class represents identifying information about a Dump archive volume.

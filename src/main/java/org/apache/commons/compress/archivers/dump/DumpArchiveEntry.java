@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This class represents an entry in a Dump archive. It consists
@@ -354,7 +355,7 @@ public class DumpArchiveEntry implements ArchiveEntry {
         //entry.isSummaryOnly = false;
         return entry;
     }
-    private String name;
+    private @RUntainted String name;
     private TYPE type = TYPE.UNKNOWN;
     private int mode;
     private Set<PERMISSION> permissions = Collections.emptySet();
@@ -398,7 +399,7 @@ public class DumpArchiveEntry implements ArchiveEntry {
      * @param name pathname
      * @param simpleName actual file name.
      */
-    public DumpArchiveEntry(final String name, final String simpleName) {
+    public DumpArchiveEntry(final @RUntainted String name, final String simpleName) {
         setName(name);
         this.simpleName = simpleName;
     }
@@ -411,7 +412,7 @@ public class DumpArchiveEntry implements ArchiveEntry {
      * @param ino the ino
      * @param type the type
      */
-    protected DumpArchiveEntry(final String name, final String simpleName, final int ino,
+    protected DumpArchiveEntry(final @RUntainted String name, final String simpleName, final int ino,
                                final TYPE type) {
         setType(type);
         setName(name);
@@ -540,7 +541,7 @@ public class DumpArchiveEntry implements ArchiveEntry {
      * @return the name of the entry.
      */
     @Override
-    public String getName() {
+    public @RUntainted String getName() {
         return name;
     }
 
@@ -749,7 +750,7 @@ public class DumpArchiveEntry implements ArchiveEntry {
      * Sets the name of the entry.
      * @param name the name
      */
-    public final void setName(String name) {
+    public final void setName(@RUntainted String name) {
         this.originalName = name;
         if (name != null) {
             if (isDirectory() && !name.endsWith("/")) {

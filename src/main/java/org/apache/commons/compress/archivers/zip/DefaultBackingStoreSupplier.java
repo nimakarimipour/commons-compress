@@ -25,6 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore;
 import org.apache.commons.compress.parallel.ScatterGatherBackingStore;
 import org.apache.commons.compress.parallel.ScatterGatherBackingStoreSupplier;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Implements {@link ScatterGatherBackingStoreSupplier} using a temporary folder.
@@ -60,7 +61,7 @@ public class DefaultBackingStoreSupplier implements ScatterGatherBackingStoreSup
     @Override
     public ScatterGatherBackingStore get() throws IOException {
         final String suffix = "n" + storeNum.incrementAndGet();
-        final Path tempFile = dir == null ? Files.createTempFile(PREFIX, suffix) : Files.createTempFile(dir, PREFIX, suffix);
+        final @RUntainted Path tempFile = dir == null ? Files.createTempFile(PREFIX, suffix) : Files.createTempFile(dir, PREFIX, suffix);
         return new FileBasedScatterGatherBackingStore(tempFile);
     }
 }

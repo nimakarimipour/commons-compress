@@ -22,6 +22,7 @@ package org.apache.commons.compress.archivers;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Set;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Creates Archive {@link ArchiveInputStream}s and {@link ArchiveOutputStream}s.
@@ -57,7 +58,7 @@ public interface ArchiveStreamProvider {
      * @throws IllegalArgumentException
      *             if the archiver name or stream is null
      */
-    ArchiveInputStream createArchiveInputStream(final String name, final InputStream in, final String encoding)
+    ArchiveInputStream createArchiveInputStream(final String name, final InputStream in, final @RUntainted String encoding)
             throws ArchiveException;
 
     /**

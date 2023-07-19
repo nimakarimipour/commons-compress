@@ -25,6 +25,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
 import org.apache.commons.compress.utils.FileNameUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Used internally by {@link ZipArchiveOutputStream} when creating a split archive.
@@ -44,9 +45,9 @@ class ZipSplitOutputStream extends OutputStream {
     private final static long ZIP_SEGMENT_MIN_SIZE = 64 * 1024L;
     private final static long ZIP_SEGMENT_MAX_SIZE = 4294967295L;
     private OutputStream outputStream;
-    private Path zipFile;
+    private @RUntainted Path zipFile;
     private final long splitSize;
-    private int currentSplitSegmentIndex;
+    private @RUntainted int currentSplitSegmentIndex;
     private long currentSplitSegmentBytesWritten;
 
     private boolean finished;
@@ -61,7 +62,7 @@ class ZipSplitOutputStream extends OutputStream {
      * @throws IllegalArgumentException if arguments are illegal: Zip split segment size should between 64K and 4,294,967,295.
      * @throws IOException if an I/O error occurs
      */
-    public ZipSplitOutputStream(final File zipFile, final long splitSize) throws IllegalArgumentException, IOException {
+    public ZipSplitOutputStream(final @RUntainted File zipFile, final long splitSize) throws IllegalArgumentException, IOException {
         this(zipFile.toPath(), splitSize);
     }
 
@@ -75,7 +76,7 @@ class ZipSplitOutputStream extends OutputStream {
      * @throws IOException if an I/O error occurs
      * @since 1.22
      */
-    public ZipSplitOutputStream(final Path zipFile, final long splitSize) throws IllegalArgumentException, IOException {
+    public ZipSplitOutputStream(final @RUntainted Path zipFile, final long splitSize) throws IllegalArgumentException, IOException {
         if (splitSize < ZIP_SEGMENT_MIN_SIZE || splitSize > ZIP_SEGMENT_MAX_SIZE) {
             throw new IllegalArgumentException("Zip split segment size should between 64K and 4,294,967,295");
         }
@@ -115,10 +116,10 @@ class ZipSplitOutputStream extends OutputStream {
      * @return
      * @throws IOException
      */
-    private Path createNewSplitSegmentFile(final Integer zipSplitSegmentSuffixIndex) throws IOException {
-        final int newZipSplitSegmentSuffixIndex = zipSplitSegmentSuffixIndex == null ? (currentSplitSegmentIndex + 2) : zipSplitSegmentSuffixIndex;
+    private @RUntainted Path createNewSplitSegmentFile(final @RUntainted Integer zipSplitSegmentSuffixIndex) throws IOException {
+        final @RUntainted int newZipSplitSegmentSuffixIndex = zipSplitSegmentSuffixIndex == null ? (currentSplitSegmentIndex + 2) : zipSplitSegmentSuffixIndex;
         final String baseName = FileNameUtils.getBaseName(zipFile);
-        String extension = ".z";
+        @RUntainted String extension = ".z";
         if (newZipSplitSegmentSuffixIndex <= 9) {
             extension += "0" + newZipSplitSegmentSuffixIndex;
         } else {
@@ -127,7 +128,7 @@ class ZipSplitOutputStream extends OutputStream {
 
         final Path parent = zipFile.getParent();
         final String dir = Objects.nonNull(parent) ? parent.toAbsolutePath().toString() : ".";
-        final Path newFile = zipFile.getFileSystem().getPath(dir, baseName + extension);
+        final @RUntainted Path newFile = zipFile.getFileSystem().getPath(dir, baseName + extension);
 
         if (Files.exists(newFile)) {
             throw new IOException("split ZIP segment " + baseName + extension + " already exists");
@@ -145,7 +146,7 @@ class ZipSplitOutputStream extends OutputStream {
             throw new IOException("This archive has already been finished");
         }
 
-        final String zipFileBaseName = FileNameUtils.getBaseName(zipFile);
+        final @RUntainted String zipFileBaseName = FileNameUtils.getBaseName(zipFile);
         outputStream.close();
         Files.move(zipFile, zipFile.resolveSibling(zipFileBaseName + ".zip"), StandardCopyOption.ATOMIC_MOVE);
         finished = true;
@@ -165,7 +166,7 @@ class ZipSplitOutputStream extends OutputStream {
      * @throws IOException
      */
     private void openNewSplitSegment() throws IOException {
-        Path newFile;
+        @RUntainted Path newFile;
         if (currentSplitSegmentIndex == 0) {
             outputStream.close();
             newFile = createNewSplitSegmentFile(1);

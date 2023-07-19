@@ -21,6 +21,7 @@ package org.apache.commons.compress.archivers.zip;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * An interface for encoders that do a pretty encoding of ZIP
@@ -56,7 +57,7 @@ public interface ZipEncoding {
      * @return The decoded string.
      * @throws IOException on error
      */
-    String decode(byte [] data) throws IOException;
+    @RUntainted String decode(byte [] data) throws IOException;
 
     /**
      * Encode a file name or a comment to a byte array suitable for

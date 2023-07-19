@@ -27,6 +27,7 @@ import java.util.Date;
 import java.util.Objects;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Represents an archive entry in the "ar" format.
@@ -70,7 +71,7 @@ public class ArArchiveEntry implements ArchiveEntry {
      * They also vary in how names longer than 16 characters are represented.
      * (Not yet fully supported by this implementation)
      */
-    private final String name;
+    private final @RUntainted String name;
     private final int userId;
     private final int groupId;
     private final int mode;
@@ -179,7 +180,7 @@ public class ArArchiveEntry implements ArchiveEntry {
     }
 
     @Override
-    public String getName() {
+    public @RUntainted String getName() {
         return name;
     }
 

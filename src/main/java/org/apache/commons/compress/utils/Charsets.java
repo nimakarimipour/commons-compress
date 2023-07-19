@@ -19,6 +19,7 @@ package org.apache.commons.compress.utils;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Charsets required of every implementation of the Java platform.
@@ -166,7 +167,7 @@ public class Charsets {
      * @throws java.nio.charset.IllegalCharsetNameException
      *             If the given charset name is illegal
      */
-    public static Charset toCharset(final String charset) {
+    public static @RUntainted Charset toCharset(final @RUntainted String charset) {
         return charset == null ? Charset.defaultCharset() : Charset.forName(charset);
     }
 }

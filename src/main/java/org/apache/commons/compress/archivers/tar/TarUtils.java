@@ -36,6 +36,7 @@ import org.apache.commons.compress.archivers.zip.ZipEncoding;
 import org.apache.commons.compress.archivers.zip.ZipEncodingHelper;
 import org.apache.commons.compress.utils.CharsetNames;
 import org.apache.commons.compress.utils.IOUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * This class provides static utility methods to work with byte streams.
@@ -59,9 +60,9 @@ public class TarUtils {
             public boolean canEncode(final String name) { return true; }
 
             @Override
-            public String decode(final byte[] buffer) {
-                final int length = buffer.length;
-                final StringBuilder result = new StringBuilder(length);
+            public @RUntainted String decode(final byte[] buffer) {
+                final @RUntainted int length = buffer.length;
+                final @RUntainted StringBuilder result = new StringBuilder(length);
 
                 for (final byte b : buffer) {
                     if (b == 0) { // Trailing null

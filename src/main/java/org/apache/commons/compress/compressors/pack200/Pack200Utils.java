@@ -30,6 +30,7 @@ import java.util.jar.JarFile;
 import java.util.jar.JarOutputStream;
 
 import org.apache.commons.compress.java.util.jar.Pack200;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Utility methods for Pack200.
@@ -110,7 +111,7 @@ public class Pack200Utils {
             props = new HashMap<>();
         }
         props.put(Pack200.Packer.SEGMENT_LIMIT, "-1");
-        final Path tempFile = Files.createTempFile("commons-compress", "pack200normalize");
+        final @RUntainted Path tempFile = Files.createTempFile("commons-compress", "pack200normalize");
         try {
             try (OutputStream fos = Files.newOutputStream(tempFile);
                  JarFile jarFile = new JarFile(from)) {

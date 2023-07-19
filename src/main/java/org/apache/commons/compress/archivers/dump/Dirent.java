@@ -17,6 +17,7 @@
  * under the License.
  */
 package org.apache.commons.compress.archivers.dump;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Directory entry.
@@ -25,7 +26,7 @@ class Dirent {
     private final int ino;
     private final int parentIno;
     private final int type;
-    private final String name;
+    private final @RUntainted String name;
 
     /**
      * Constructor
@@ -35,7 +36,7 @@ class Dirent {
      * @param type
      * @param name
      */
-    Dirent(final int ino, final int parentIno, final int type, final String name) {
+    Dirent(final int ino, final int parentIno, final int type, final @RUntainted String name) {
         this.ino = ino;
         this.parentIno = parentIno;
         this.type = type;
@@ -57,7 +58,7 @@ class Dirent {
      *
      * @return the directory name
      */
-    String getName() {
+    @RUntainted String getName() {
         return name;
     }
 

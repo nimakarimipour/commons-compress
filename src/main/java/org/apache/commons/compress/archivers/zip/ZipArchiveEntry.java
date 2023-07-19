@@ -37,6 +37,7 @@ import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.EntryStreamOffsets;
 import org.apache.commons.compress.utils.ByteUtils;
 import org.apache.commons.compress.utils.TimeUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Extension that adds better handling of extra fields and provides

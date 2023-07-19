@@ -27,6 +27,7 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * A ZipEncoding, which uses a java.nio {@link
@@ -125,7 +126,7 @@ class NioZipEncoding implements ZipEncoding, CharsetAccessor {
      * ZipEncoding#decode(byte[])
      */
     @Override
-    public String decode(final byte[] data) throws IOException {
+    public @RUntainted String decode(final byte[] data) throws IOException {
         return newDecoder()
             .decode(ByteBuffer.wrap(data)).toString();
     }

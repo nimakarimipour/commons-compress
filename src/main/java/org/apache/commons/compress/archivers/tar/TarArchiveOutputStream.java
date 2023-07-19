@@ -42,6 +42,7 @@ import org.apache.commons.compress.archivers.zip.ZipEncodingHelper;
 import org.apache.commons.compress.utils.CountingOutputStream;
 import org.apache.commons.compress.utils.FixedLengthBlockOutputStream;
 import org.apache.commons.compress.utils.TimeUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * The TarOutputStream writes a UNIX tar archive as an OutputStream. Methods are provided to put
@@ -296,7 +297,7 @@ public class TarArchiveOutputStream extends ArchiveOutputStream {
             TarConstants.MAXID);
         // libarchive extensions
         addFileTimePaxHeader(paxHeaders, "LIBARCHIVE.creationtime", entry.getCreationTime());
-        // star extensions by Jörg Schilling
+        // star extensions by JÃ¶rg Schilling
         addPaxHeaderForBigNumber(paxHeaders, "SCHILY.devmajor",
             entry.getDevMajor(), TarConstants.MAXID);
         addPaxHeaderForBigNumber(paxHeaders, "SCHILY.devminor",

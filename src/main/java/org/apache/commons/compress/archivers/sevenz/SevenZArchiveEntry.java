@@ -26,6 +26,7 @@ import java.util.Objects;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.utils.TimeUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * An entry in a 7z archive.
@@ -62,7 +63,7 @@ public class SevenZArchiveEntry implements ArchiveEntry {
         return TimeUtils.ntfsTimeToDate(ntfsTime);
     }
 
-    private String name;
+    private @RUntainted String name;
     private boolean hasStream;
     private boolean isDirectory;
     private boolean isAntiItem;
@@ -334,7 +335,7 @@ public class SevenZArchiveEntry implements ArchiveEntry {
      * @return This entry's name.
      */
     @Override
-    public String getName() {
+    public @RUntainted String getName() {
         return name;
     }
 

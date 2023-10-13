@@ -611,7 +611,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.
               </annotationProcessors>
               <compilerArgs>
                 <arg>-Awarns</arg>
-                <arg>-AannotatedPackages=org.apache</arg>
+                <arg>-AannotatedPackages=org.apache.commons.compress</arg>
                 <arg>-AenableLibraryCheck</arg>
                 <arg>-AenableSerialization</arg>
                 <arg>-AserializationConfigPath=/home/nima/Developer/taint-benchmarks/commons-compress/annotator-out/checker.xml</arg>

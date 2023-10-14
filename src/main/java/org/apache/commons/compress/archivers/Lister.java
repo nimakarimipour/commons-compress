@@ -28,6 +28,7 @@ import org.apache.commons.compress.archivers.sevenz.SevenZFile;
 import org.apache.commons.compress.archivers.tar.TarFile;
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipFile;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Simple command line application that lists the contents of an archive.
@@ -49,7 +50,7 @@ public final class Lister {
         return FACTORY.createArchiveInputStream(fis);
     }
 
-    private static String detectFormat(final File f) throws ArchiveException, IOException {
+    private static String detectFormat(final @RUntainted File f) throws ArchiveException, IOException {
         try (final InputStream fis = new BufferedInputStream(Files.newInputStream(f.toPath()))) {
             return ArchiveStreamFactory.detect(fis);
         }
@@ -67,7 +68,7 @@ public final class Lister {
         }
     }
 
-    private static void listStream(final File f, final String[] args) throws ArchiveException, IOException {
+    private static void listStream(final @RUntainted File f, final String[] args) throws ArchiveException, IOException {
         try (final InputStream fis = new BufferedInputStream(Files.newInputStream(f.toPath()));
                 final ArchiveInputStream ais = createArchiveInputStream(args, fis)) {
             System.out.println("Created " + ais.toString());
@@ -107,13 +108,13 @@ public final class Lister {
      * @throws ArchiveException Archiver related Exception.
      * @throws IOException an I/O exception.
      */
-    public static void main(final String[] args) throws ArchiveException, IOException {
+    public static void main(final @RUntainted String[] args) throws ArchiveException, IOException {
         if (args.length == 0) {
             usage();
             return;
         }
         System.out.println("Analysing " + args[0]);
-        final File f = new File(args[0]);
+        final @RUntainted File f = new File(args[0]);
         if (!f.isFile()) {
             System.err.println(f + " doesn't exist or is a directory");
         }

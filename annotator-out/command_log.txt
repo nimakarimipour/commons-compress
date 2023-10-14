@@ -1,0 +1,64 @@
+2023-10-13T15:27:51.636278:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:28:25.063553:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:29:00.633188:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:29:33.091295:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:30:06.147126:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:30:39.164807:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:31:12.473614:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:31:39.252615:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:32:05.528449:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:32:31.500812:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:32:57.368546:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:33:22.979475:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:33:48.803546:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:34:14.776883:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:34:40.418988:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:35:06.259307:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:35:32.096676:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:35:57.917762:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:36:23.422801:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:36:48.981538:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:37:14.566576:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:37:40.219031:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:38:05.825410:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:38:31.537300:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:38:57.482477:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:39:23.206830:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:39:49.142229:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:40:14.798009:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:40:40.408784:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:41:06.088733:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:41:31.613904:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+
+2023-10-13T15:41:57.511880:cd /home/nima/Developer/taint-benchmarks/commons-compress && mvn clean compile -Drat.skip=true
+

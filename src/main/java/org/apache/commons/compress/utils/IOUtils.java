@@ -29,6 +29,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Utility functions
@@ -190,7 +191,7 @@ public final class IOUtils {
      * @throws IOException on error
      * @since 1.20
      */
-    public static int read(final File file, final byte[] array) throws IOException {
+    public static int read(final @RUntainted File file, final byte[] array) throws IOException {
         try (InputStream inputStream = Files.newInputStream(file.toPath())) {
             return readFully(inputStream, array, 0, array.length);
         }

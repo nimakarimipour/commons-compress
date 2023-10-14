@@ -19,6 +19,7 @@ package org.apache.commons.compress.utils;
 
 import java.io.File;
 import java.nio.file.Path;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
 
 /**
  * Generic file name utilities.
@@ -26,7 +27,7 @@ import java.nio.file.Path;
  */
 public class FileNameUtils {
 
-    private static String fileNameToBaseName(final String name) {
+    private static @RPolyTainted String fileNameToBaseName(final @RPolyTainted String name) {
         final int extensionIndex = name.lastIndexOf('.');
         return extensionIndex < 0 ? name : name.substring(0, extensionIndex);
     }
@@ -46,7 +47,7 @@ public class FileNameUtils {
      * @param path the path of the file to obtain the basename of.
      * @since 1.22
      */
-    public static String getBaseName(final Path path) {
+    public static @RPolyTainted String getBaseName(final @RPolyTainted Path path) {
         if (path == null) {
             return null;
         }

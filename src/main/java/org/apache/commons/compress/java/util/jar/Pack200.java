@@ -29,6 +29,7 @@ import java.util.jar.JarInputStream;
 import java.util.jar.JarOutputStream;
 
 import org.apache.commons.compress.harmony.archive.internal.nls.Messages;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Class factory for {@link Pack200.Packer} and {@link Pack200.Unpacker}.
@@ -253,7 +254,7 @@ public abstract class Pack200 {
          * @throws IOException
          *             if I/O exception occurs.
          */
-        void unpack(File in, JarOutputStream out) throws IOException;
+        void unpack(@RUntainted File in, JarOutputStream out) throws IOException;
 
         /**
          * Unpack the specified stream to the specified JAR output stream.

@@ -42,6 +42,7 @@ import org.apache.commons.compress.archivers.ArchiveStreamFactory;
 import org.apache.commons.compress.archivers.sevenz.SevenZOutputFile;
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
 import org.apache.commons.compress.utils.IOUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Provides a high level API for creating archives.
@@ -65,11 +66,11 @@ public class Archiver {
         }
 
         @Override
-        public FileVisitResult preVisitDirectory(final Path dir, final BasicFileAttributes attrs) throws IOException {
+        public FileVisitResult preVisitDirectory(final @RUntainted Path dir, final BasicFileAttributes attrs) throws IOException {
             return visit(dir, attrs, false);
         }
 
-        protected FileVisitResult visit(final Path path, final BasicFileAttributes attrs, final boolean isFile)
+        protected FileVisitResult visit(final @RUntainted Path path, final BasicFileAttributes attrs, final boolean isFile)
             throws IOException {
             Objects.requireNonNull(path);
             Objects.requireNonNull(attrs);
@@ -88,7 +89,7 @@ public class Archiver {
         }
 
         @Override
-        public FileVisitResult visitFile(final Path file, final BasicFileAttributes attrs) throws IOException {
+        public FileVisitResult visitFile(final @RUntainted Path file, final BasicFileAttributes attrs) throws IOException {
             return visit(file, attrs, true);
         }
     }
@@ -162,7 +163,7 @@ public class Archiver {
         Files.walkFileTree(directory, new ArchiverFileVisitor(null, directory) {
 
             @Override
-            protected FileVisitResult visit(final Path path, final BasicFileAttributes attrs, final boolean isFile)
+            protected FileVisitResult visit(final @RUntainted Path path, final BasicFileAttributes attrs, final boolean isFile)
                 throws IOException {
                 Objects.requireNonNull(path);
                 Objects.requireNonNull(attrs);

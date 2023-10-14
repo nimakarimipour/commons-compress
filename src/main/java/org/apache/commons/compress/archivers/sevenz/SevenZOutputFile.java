@@ -54,6 +54,7 @@ import java.util.zip.CRC32;
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.utils.CountingOutputStream;
 import org.apache.commons.compress.utils.TimeUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Writes a 7z file.
@@ -510,7 +511,7 @@ public class SevenZOutputFile implements Closeable {
      * @throws IOException if an I/O error occurs.
      * @since 1.21
      */
-    public void write(final Path path, final OpenOption... options) throws IOException {
+    public void write(final @RUntainted Path path, final OpenOption... options) throws IOException {
         try (InputStream in = new BufferedInputStream(Files.newInputStream(path, options))) {
             write(in);
         }

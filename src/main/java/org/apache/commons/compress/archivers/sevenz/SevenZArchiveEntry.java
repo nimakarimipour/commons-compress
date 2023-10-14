@@ -26,6 +26,7 @@ import java.util.Objects;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.utils.TimeUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * An entry in a 7z archive.

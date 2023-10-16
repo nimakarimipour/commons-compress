@@ -24,6 +24,7 @@ import java.io.OutputStream;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * ScatterGatherBackingStore that is backed by a path.
@@ -31,7 +32,7 @@ import java.nio.file.Path;
  * @since 1.10
  */
 public class FileBasedScatterGatherBackingStore implements ScatterGatherBackingStore {
-    private final Path target;
+    private final @RUntainted Path target;
     private final OutputStream outputStream;
     private boolean closed;
 

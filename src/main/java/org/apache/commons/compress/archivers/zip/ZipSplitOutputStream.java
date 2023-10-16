@@ -25,6 +25,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
 import org.apache.commons.compress.utils.FileNameUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Used internally by {@link ZipArchiveOutputStream} when creating a split archive.
@@ -44,7 +45,7 @@ class ZipSplitOutputStream extends OutputStream {
     private final static long ZIP_SEGMENT_MIN_SIZE = 64 * 1024L;
     private final static long ZIP_SEGMENT_MAX_SIZE = 4294967295L;
     private OutputStream outputStream;
-    private Path zipFile;
+    private @RUntainted Path zipFile;
     private final long splitSize;
     private int currentSplitSegmentIndex;
     private long currentSplitSegmentBytesWritten;
@@ -115,7 +116,7 @@ class ZipSplitOutputStream extends OutputStream {
      * @return
      * @throws IOException
      */
-    private Path createNewSplitSegmentFile(final Integer zipSplitSegmentSuffixIndex) throws IOException {
+    private @RUntainted Path createNewSplitSegmentFile(final Integer zipSplitSegmentSuffixIndex) throws IOException {
         final int newZipSplitSegmentSuffixIndex = zipSplitSegmentSuffixIndex == null ? (currentSplitSegmentIndex + 2) : zipSplitSegmentSuffixIndex;
         final String baseName = FileNameUtils.getBaseName(zipFile);
         String extension = ".z";
@@ -127,7 +128,7 @@ class ZipSplitOutputStream extends OutputStream {
 
         final Path parent = zipFile.getParent();
         final String dir = Objects.nonNull(parent) ? parent.toAbsolutePath().toString() : ".";
-        final Path newFile = zipFile.getFileSystem().getPath(dir, baseName + extension);
+        final @RUntainted Path newFile = zipFile.getFileSystem().getPath(dir, baseName + extension);
 
         if (Files.exists(newFile)) {
             throw new IOException("split ZIP segment " + baseName + extension + " already exists");
@@ -165,7 +166,7 @@ class ZipSplitOutputStream extends OutputStream {
      * @throws IOException
      */
     private void openNewSplitSegment() throws IOException {
-        Path newFile;
+        @RUntainted Path newFile;
         if (currentSplitSegmentIndex == 0) {
             outputStream.close();
             newFile = createNewSplitSegmentFile(1);

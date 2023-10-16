@@ -22,6 +22,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.zip.ZipException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * ZipExtraField related methods
@@ -56,21 +57,21 @@ public class ExtraFieldUtils {
         /**
          * Throw an exception if field cannot be parsed.
          */
-        public static final UnparseableExtraField THROW
+        public static final @RUntainted UnparseableExtraField THROW
             = new UnparseableExtraField(THROW_KEY);
 
         /**
          * Skip the extra field entirely and don't make its data
          * available - effectively removing the extra field data.
          */
-        public static final UnparseableExtraField SKIP
+        public static final @RUntainted UnparseableExtraField SKIP
             = new UnparseableExtraField(SKIP_KEY);
 
         /**
          * Read the extra field data into an instance of {@link
          * UnparseableExtraFieldData UnparseableExtraFieldData}.
          */
-        public static final UnparseableExtraField READ
+        public static final @RUntainted UnparseableExtraField READ
             = new UnparseableExtraField(READ_KEY);
 
         private final int key;

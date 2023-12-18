@@ -23,6 +23,7 @@ import java.util.Arrays;
 
 import org.apache.commons.compress.archivers.zip.ZipEncoding;
 import org.apache.commons.compress.utils.ByteUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Various utilities for dump archives.

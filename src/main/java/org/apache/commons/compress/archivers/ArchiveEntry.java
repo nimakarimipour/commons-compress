@@ -19,6 +19,7 @@
 package org.apache.commons.compress.archivers;
 
 import java.util.Date;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Represents an entry of an archive.

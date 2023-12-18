@@ -47,6 +47,7 @@ import org.apache.commons.compress.compressors.deflate64.Deflate64CompressorInpu
 import org.apache.commons.compress.utils.ArchiveUtils;
 import org.apache.commons.compress.utils.IOUtils;
 import org.apache.commons.compress.utils.InputStreamStatistics;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Implements an input stream that can read Zip archives.

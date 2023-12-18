@@ -30,6 +30,7 @@ import org.apache.commons.compress.compressors.CompressorInputStream;
 import org.apache.commons.compress.java.util.jar.Pack200;
 import org.apache.commons.compress.utils.CloseShieldFilterInputStream;
 import org.apache.commons.compress.utils.IOUtils;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * An input stream that decompresses from the Pack200 format to be read
@@ -84,7 +85,7 @@ public class Pack200CompressorInputStream extends CompressorInputStream {
      * @param f the file to decompress
      * @throws IOException if reading fails
      */
-    public Pack200CompressorInputStream(final File f) throws IOException {
+    public Pack200CompressorInputStream(final @RUntainted File f) throws IOException {
         this(f, Pack200Strategy.IN_MEMORY);
     }
 
@@ -96,7 +97,7 @@ public class Pack200CompressorInputStream extends CompressorInputStream {
      * @param props Pack200 properties to use
      * @throws IOException if reading fails
      */
-    public Pack200CompressorInputStream(final File f,
+    public Pack200CompressorInputStream(final @RUntainted File f,
                                         final Map<String, String> props)
         throws IOException {
         this(f, Pack200Strategy.IN_MEMORY, props);
@@ -110,7 +111,7 @@ public class Pack200CompressorInputStream extends CompressorInputStream {
      * @param mode the strategy to use
      * @throws IOException if reading fails
      */
-    public Pack200CompressorInputStream(final File f, final Pack200Strategy mode)
+    public Pack200CompressorInputStream(final @RUntainted File f, final Pack200Strategy mode)
         throws IOException {
         this(null, f, mode, null);
     }
@@ -124,7 +125,7 @@ public class Pack200CompressorInputStream extends CompressorInputStream {
      * @param props Pack200 properties to use
      * @throws IOException if reading fails
      */
-    public Pack200CompressorInputStream(final File f, final Pack200Strategy mode,
+    public Pack200CompressorInputStream(final @RUntainted File f, final Pack200Strategy mode,
                                         final Map<String, String> props)
         throws IOException {
         this(null, f, mode, props);
@@ -145,7 +146,7 @@ public class Pack200CompressorInputStream extends CompressorInputStream {
         this(in, Pack200Strategy.IN_MEMORY);
     }
 
-    private Pack200CompressorInputStream(final InputStream in, final File f,
+    private Pack200CompressorInputStream(final InputStream in, final @RUntainted File f,
                                          final Pack200Strategy mode,
                                          final Map<String, String> props)
             throws IOException {

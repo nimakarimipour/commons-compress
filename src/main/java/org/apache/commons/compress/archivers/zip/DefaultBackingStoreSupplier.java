@@ -25,6 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore;
 import org.apache.commons.compress.parallel.ScatterGatherBackingStore;
 import org.apache.commons.compress.parallel.ScatterGatherBackingStoreSupplier;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Implements {@link ScatterGatherBackingStoreSupplier} using a temporary folder.
@@ -45,22 +46,22 @@ public class DefaultBackingStoreSupplier implements ScatterGatherBackingStoreSup
 
     private static final String PREFIX = "parallelscatter";
 
-    private final AtomicInteger storeNum = new AtomicInteger();
+    private final @RUntainted AtomicInteger storeNum = new AtomicInteger();
 
-    private final Path dir;
+    private final @RUntainted Path dir;
     /**
      * Constructs a new instance. If {@code dir} is null, then use the default temporary-file directory.
      *
      * @param dir temporary folder, may be null, must exist if non-null.
      */
-    public DefaultBackingStoreSupplier(final Path dir) {
+    public DefaultBackingStoreSupplier(final @RUntainted Path dir) {
         this.dir = dir;
     }
 
     @Override
     public ScatterGatherBackingStore get() throws IOException {
-        final String suffix = "n" + storeNum.incrementAndGet();
-        final Path tempFile = dir == null ? Files.createTempFile(PREFIX, suffix) : Files.createTempFile(dir, PREFIX, suffix);
+        final @RUntainted String suffix = "n" + storeNum.incrementAndGet();
+        final @RUntainted Path tempFile = dir == null ? Files.createTempFile(PREFIX, suffix) : Files.createTempFile(dir, PREFIX, suffix);
         return new FileBasedScatterGatherBackingStore(tempFile);
     }
 }

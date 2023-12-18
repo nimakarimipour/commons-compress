@@ -17,6 +17,7 @@
  * under the License.
  */
 package org.apache.commons.compress.archivers.dump;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Directory entry.

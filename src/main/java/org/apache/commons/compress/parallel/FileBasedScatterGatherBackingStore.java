@@ -24,6 +24,7 @@ import java.io.OutputStream;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * ScatterGatherBackingStore that is backed by a path.
@@ -31,11 +32,11 @@ import java.nio.file.Path;
  * @since 1.10
  */
 public class FileBasedScatterGatherBackingStore implements ScatterGatherBackingStore {
-    private final Path target;
+    private final @RUntainted Path target;
     private final OutputStream outputStream;
     private boolean closed;
 
-    public FileBasedScatterGatherBackingStore(final File target) throws FileNotFoundException {
+    public FileBasedScatterGatherBackingStore(final @RUntainted File target) throws FileNotFoundException {
         this(target.toPath());
     }
 
@@ -46,7 +47,7 @@ public class FileBasedScatterGatherBackingStore implements ScatterGatherBackingS
      * @throws FileNotFoundException if the file doesn't exist
      * @since 1.22
      */
-    public FileBasedScatterGatherBackingStore(final Path target) throws FileNotFoundException {
+    public FileBasedScatterGatherBackingStore(final @RUntainted Path target) throws FileNotFoundException {
         this.target = target;
         try {
             outputStream = Files.newOutputStream(target);

@@ -1,0 +1,170 @@
+2023-12-18T14:24:57.288752:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:25:22.545269:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:25:46.152941:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:26:10.936269:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:26:36.640040:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:27:01.797654:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:27:27.051337:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:27:52.434156:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:28:17.742100:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:28:43.277502:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:29:08.488781:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:29:33.944351:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:29:59.200306:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:30:24.883346:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:30:50.839782:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:31:16.370495:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:31:41.793642:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:32:07.157996:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:32:31.452777:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:32:56.798992:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:33:21.152085:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:33:45.564307:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:34:09.693600:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:34:33.993412:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:34:59.485296:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:35:24.122805:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:35:49.752060:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:36:15.479950:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:36:40.542285:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:37:05.518280:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:37:30.830603:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:37:56.028632:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:38:21.190828:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:38:46.443870:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:39:11.656063:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:39:37.147921:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:40:02.708680:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:40:28.039968:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:40:53.902778:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:41:19.829103:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:41:45.259579:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:42:10.288366:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:42:35.470287:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:43:00.284055:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:43:25.351366:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:43:50.283869:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:44:15.493917:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:44:41.053527:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:45:06.498492:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:45:31.516717:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:45:56.685263:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:46:21.878475:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:46:46.843229:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:47:11.407257:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:47:36.382889:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:48:01.384881:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:48:26.656308:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:48:51.857299:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:49:17.294821:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:49:42.333705:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:50:07.699569:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:50:32.938409:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:50:58.054199:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:51:23.138612:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:51:48.805377:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:52:14.329496:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:52:39.723861:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:53:05.223316:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:53:30.556677:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:53:55.889010:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:54:21.594998:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:54:47.224782:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:55:12.489506:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:55:37.989690:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:56:03.016361:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:56:28.739147:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:56:53.983552:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:57:19.565172:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:57:44.763789:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:58:09.987873:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:58:35.412426:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:59:00.703692:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:59:26.258726:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T14:59:51.930932:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+
+2023-12-18T15:00:17.306042:cd /home/nima/Developer/taint-benchmarks/commons-compress && ./annotator-command.sh
+

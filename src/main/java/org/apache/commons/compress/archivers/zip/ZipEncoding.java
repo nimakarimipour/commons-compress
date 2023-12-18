@@ -21,6 +21,7 @@ package org.apache.commons.compress.archivers.zip;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * An interface for encoders that do a pretty encoding of ZIP

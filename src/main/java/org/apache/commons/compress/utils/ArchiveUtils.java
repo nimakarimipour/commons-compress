@@ -22,6 +22,8 @@ import static java.nio.charset.StandardCharsets.US_ASCII;
 import java.util.Arrays;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Generic Archive utilities

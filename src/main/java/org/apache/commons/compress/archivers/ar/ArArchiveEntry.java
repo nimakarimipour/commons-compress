@@ -27,6 +27,7 @@ import java.util.Date;
 import java.util.Objects;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Represents an archive entry in the "ar" format.

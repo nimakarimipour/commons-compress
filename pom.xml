@@ -94,7 +94,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.
     <dependency>
       <groupId>org.checkerframework</groupId>
       <artifactId>checker-qual</artifactId>
-      <version>3.35.0</version>
+      <version>${env.CF_VERSION}</version>
     </dependency>
     <dependency>
       <groupId>com.google.errorprone</groupId>
@@ -104,7 +104,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.
     <dependency>
       <groupId>edu.ucr.cs.riple.taint</groupId>
       <artifactId>ucrtainting-checker</artifactId>
-      <version>0.1</version>
+      <version>${env.UCRT_VERSION}</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -597,7 +597,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.
                 <path>
                   <groupId>edu.ucr.cs.riple.taint</groupId>
                   <artifactId>ucrtainting-checker</artifactId>
-                  <version>0.1</version>
+                  <version>${env.UCRT_VERSION}</version>
                 </path>
                 <!-- <path>
                   <groupId>edu.ucr.cs.riple.annotator</groupId>
@@ -610,14 +610,15 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.
               </annotationProcessors>
               <compilerArgs>
                 <!-- <arg>-Awarns</arg> -->
+                <arg>-nowarn</arg>
                 <arg>-AannotatedPackages=org.apache.commons.compress</arg>
                 <arg>-AenableLibraryCheck=${env.ANNOTATOR_LIBRARY}</arg>
                 <arg>-AenablePolyTaintInference=${env.ANNOTATOR_POLY}</arg>
                 <arg>-AenableTypeArgumentInference=${env.ANNOTATOR_TYPE_ARG}</arg>
                 <arg>-AenableSerialization</arg>
-                <arg>-AserializationConfigPath=/home/nima/Developer/taint-benchmarks/commons-compress/annotator-out/checker.xml</arg>
-                <!-- <arg>-XDcompilePolicy=simple</arg> -->
-                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/nima/Developer/taint-benchmarks/commons-compress/annotator-out/scanner.xml</arg> -->
+                <arg>-AserializationConfigPath=/Users/nima/Developer/commons-compress/annotator-out/checker.xml</arg>
+                <arg>-XDcompilePolicy=simple</arg>
+                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/Users/nima/Developer/commons-compress/annotator-out/scanner.xml</arg> -->
               </compilerArgs>
             </configuration>
           </plugin>
@@ -627,7 +628,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.
         <dependency>
           <groupId>org.checkerframework</groupId>
           <artifactId>checker</artifactId>
-          <version>3.35.0</version>
+          <version>${env.CF_VERSION}</version>
         </dependency>
       </dependencies>
     </profile>
